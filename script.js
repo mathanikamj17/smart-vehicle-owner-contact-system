@@ -39,4 +39,17 @@ function sendEmergency() {
 
     document.getElementById("emergencyMessage").value = "";
 }
+function saveService() {
+    let vehicle = document.getElementById("serviceVehicle").value.trim();
+    let date = document.getElementById("serviceDate").value;
+
+    if (vehicle === "" || date === "") {
+        alert("Please enter all details!");
+        return;
+    }
+
+    document.getElementById("serviceResult").innerText =
+        "Service reminder created for " + vehicle +
+        " on " + date;
+}
 
