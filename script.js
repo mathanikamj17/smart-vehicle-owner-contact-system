@@ -25,3 +25,18 @@ document.getElementById("vehicleForm").addEventListener("submit", function(event
 
     this.reset();
 });
+function sendEmergency() {
+    let vehicle = document.getElementById("emergencyVehicle").value.trim();
+    let message = document.getElementById("emergencyMessage").value.trim();
+
+    if (vehicle === "" || message === "") {
+        alert("Please enter vehicle number and message!");
+        return;
+    }
+
+    document.getElementById("emergencyResult").innerText =
+        "Emergency request prepared successfully!";
+
+    document.getElementById("emergencyMessage").value = "";
+}
+
