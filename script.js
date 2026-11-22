@@ -52,4 +52,18 @@ function saveService() {
         "Service reminder created for " + vehicle +
         " on " + date;
 }
+function addServiceReminder() {
+  const vehicle = document.getElementById("vehicleName").value;
+  const date = document.getElementById("serviceDate").value;
+
+  if (!vehicle || !date) {
+    alert("Please enter all details!");
+    return;
+  }
+
+  const li = document.createElement("li");
+  li.textContent = vehicle + " - Service Date: " + date;
+
+  document.getElementById("reminderList").appendChild(li);
+}
 
