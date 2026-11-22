@@ -7,7 +7,50 @@
 <body>
 
     <h1>Smart Vehicle Owner Contact System</h1>
+<section id="register">
+    <h2>Register Your Vehicle</h2>
 
+    <form id="vehicleForm">
+
+        <input type="text"
+        id="ownerName"
+        placeholder="Owner Name"
+        required>
+
+        <br><br>
+
+        <input type="text"
+        id="regNumber"
+        placeholder="Vehicle Registration Number"
+        required>
+
+        <br><br>
+
+        <select id="vehicleType" required>
+            <option value="">Select Vehicle Type</option>
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Truck</option>
+            <option>Other</option>
+        </select>
+
+        <br><br>
+
+        <input type="email"
+        id="ownerEmail"
+        placeholder="Owner Email"
+        required>
+
+        <br><br>
+
+        <button type="submit">
+            Register Vehicle
+        </button>
+
+        <p id="registerResult"></p>
+
+    </form>
+</section>
     <h2>Vehicle Number Search</h2>
 
     <input type="text" id="vehicleNumber"
