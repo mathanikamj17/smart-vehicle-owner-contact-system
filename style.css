@@ -19,153 +19,104 @@ body {
 
 header {
     background: #101d35;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    color: white;
+    padding: 25px 7%;
+    text-align: center;
 }
 
 header h1 {
-    color: white;
-    font-size: 23px;
-    letter-spacing: 1px;
+    font-size: clamp(22px, 4vw, 32px);
+    margin-bottom: 5px;
 }
 
+header p {
+    color: #cbdcf5;
+}
+
+/* NAVIGATION */
+
 nav {
+    background: #18365e;
+    padding: 16px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 22px;
 }
 
 nav a {
-    color: #dce8ff;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
     font-weight: 600;
-    transition: 0.3s;
 }
 
 nav a:hover {
     color: #39a9ff;
 }
 
-/* HERO SECTION */
+/* MAIN SECTIONS */
 
-.hero {
-    padding: 100px 20px;
-    text-align: center;
-    background: linear-gradient(
-        135deg, #101d35, #1557a0, #087cbd
-    );
-    color: white;
-}
-
-.hero h2 {
-    font-size: clamp(28px, 5vw, 46px);
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 17px;
-    color: #d9eaff;
-    margin-bottom: 30px;
-}
-
-.main-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #ffffff;
-    color: #0756a5;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.main-btn:hover {
-    background: #39a9ff;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* DASHBOARD */
-
-.dashboard {
-    max-width: 1150px;
-    margin: 55px auto;
+main {
+    max-width: 1100px;
+    margin: 35px auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
 }
 
-.card {
+section {
     background: white;
-    padding: 30px 20px;
+    padding: 30px;
+    margin-bottom: 30px;
     border-radius: 14px;
     box-shadow: 0 5px 22px rgba(20,50,90,0.08);
     border: 1px solid #e5ebf5;
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(20,80,150,0.15);
-}
-
-.card h3 {
+section h2 {
     color: #1263b5;
-    font-size: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 25px;
 }
 
-.card p {
-    color: #66758c;
-    font-size: 14px;
-}
+/* FORMS AND INPUTS */
 
-/* SEARCH SECTION */
-
-#search {
-    max-width: 850px;
-    margin: 60px auto;
-    padding: 45px 20px;
-    text-align: center;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(20,50,90,0.08);
-}
-
-#search h2 {
-    color: #122b50;
-    margin-bottom: 25px;
-    font-size: 28px;
-}
-
-input {
-    width: min(320px, 90%);
-    padding: 15px;
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    margin: 12px 0;
     border: 1px solid #ccd7e6;
     border-radius: 8px;
     outline: none;
     font-size: 15px;
+    font-family: inherit;
+    background: white;
 }
 
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
     border-color: #168cff;
     box-shadow: 0 0 8px rgba(22,140,255,0.2);
 }
 
+textarea {
+    resize: vertical;
+}
+
+/* BUTTONS */
+
 button {
-    padding: 15px 25px;
+    padding: 13px 23px;
+    margin: 8px 0;
     background: #126bc2;
     color: white;
     border: none;
     border-radius: 8px;
     font-weight: bold;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -175,9 +126,119 @@ button:hover {
     transform: translateY(-2px);
 }
 
-#result {
-    margin-top: 20px;
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #f8fbff;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #dce8f5;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(20,80,150,0.12);
+}
+
+.card h3 {
     color: #1263b5;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #66758c;
+    font-size: 14px;
+}
+
+/* SEARCH */
+
+#search {
+    text-align: center;
+}
+
+#search input {
+    margin: 12px auto;
+}
+
+#result {
+    margin-top: 15px;
+    color: #1263b5;
+    font-weight: 600;
+}
+
+/* EMERGENCY */
+
+#emergency {
+    border-left: 5px solid #e34d4d;
+}
+
+#emergency h2 {
+    color: #d93636;
+}
+
+#emergency button {
+    background: #d93636;
+}
+
+#emergency button:hover {
+    background: #a91f1f;
+}
+
+#emergencyResult {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* LOGIN */
+
+#login {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginForm input {
+    width: 100%;
+}
+
+/* HISTORY */
+
+#history .card {
+    margin-bottom: 15px;
+}
+
+#requestHistory,
+#emergencyHistory {
+    margin-bottom: 20px;
+}
+
+/* SERVICE REMINDER */
+
+#service {
+    border-left: 5px solid #159b73;
+}
+
+#service h2 {
+    color: #159b73;
+}
+
+#service .card {
+    background: #f3fff9;
+}
+
+/* RESULT MESSAGES */
+
+#registerResult,
+#loginResult,
+#serviceResult {
+    margin-top: 15px;
     font-weight: 600;
 }
 
@@ -186,50 +247,53 @@ button:hover {
 footer {
     background: #101d35;
     color: #dce8ff;
-    padding: 28px 15px;
+    padding: 25px 15px;
     text-align: center;
-    margin-top: 60px;
-}
-
-footer p {
-    font-size: 14px;
-    margin: 5px;
+    margin-top: 50px;
 }
 
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 900px) {
-    .dashboard {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+@media (max-width: 700px) {
 
-@media (max-width: 600px) {
     header {
-        justify-content: center;
-        text-align: center;
+        padding: 22px 12px;
     }
 
     nav {
-        justify-content: center;
-        gap: 14px;
+        gap: 12px;
+        padding: 14px 8px;
     }
 
-    .hero {
-        padding: 65px 15px;
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    section h2 {
+        font-size: 21px;
     }
 
     .dashboard {
         grid-template-columns: 1fr;
-        margin: 30px auto;
     }
 
-    #search {
-        margin: 30px 15px;
-        padding: 30px 15px;
+    input,
+    select,
+    textarea {
+        max-width: 100%;
     }
 
     button {
-        margin-top: 12px;
+        width: 100%;
     }
 }
+
