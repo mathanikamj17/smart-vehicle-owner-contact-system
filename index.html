@@ -8,177 +8,87 @@
 
     <h1>Smart Vehicle Owner Contact System</h1>
 <section id="register">
-    <h2>Register Your Vehicle</h2>
+    <h2>🚗 Vehicle Registration</h2>
+
+    <div class="step-progress">
+        <p id="stepText">Step 1 of 5</p>
+    </div>
 
     <form id="vehicleForm">
 
-        <input type="text"
-        id="ownerName"
-        placeholder="Owner Name"
-        required>
+        <!-- STEP 1 -->
+        <div class="form-step active">
+            <h3>Step 1 - Owner Details</h3>
 
-        <br><br>
+            <input type="text" id="ownerName"
+                placeholder="Owner Name" required>
 
-        <input type="text"
-        id="regNumber"
-        placeholder="Vehicle Registration Number"
-        required>
+            <input type="email" id="ownerEmail"
+                placeholder="Email Address" required>
 
-        <br><br>
+            <input type="tel" id="ownerPhone"
+                placeholder="Phone Number" required>
+        </div>
 
-        <select id="vehicleType" required>
-            <option value="">Select Vehicle Type</option>
-            <option>Car</option>
-            <option>Bike</option>
-            <option>Truck</option>
-            <option>Other</option>
-        </select>
+        <!-- STEP 2 -->
+        <div class="form-step">
+            <h3>Step 2 - Vehicle Details</h3>
 
-        <br><br>
+            <input type="text" id="regNumber"
+                placeholder="Vehicle Registration Number" required>
 
-        <input type="email"
-        id="ownerEmail"
-        placeholder="Owner Email"
-        required>
+            <select id="vehicleType" required>
+                <option value="">Select Vehicle Type</option>
+                <option>Car</option>
+                <option>Bike</option>
+                <option>Truck</option>
+                <option>Other</option>
+            </select>
 
-        <br><br>
+            <input type="text" id="vehicleModel"
+                placeholder="Vehicle Model" required>
+        </div>
 
-        <button type="submit">
-            Register Vehicle
-        </button>
+        <!-- STEP 3 -->
+        <div class="form-step">
+            <h3>Step 3 - Additional Details</h3>
+
+            <input type="text" id="city"
+                placeholder="City" required>
+
+            <input type="text" id="address"
+                placeholder="Address" required>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step">
+            <h3>Step 4 - Review Details</h3>
+            <div id="reviewDetails"></div>
+            <p>Please check your details before submitting.</p>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step">
+            <h3>Step 5 - Registration Complete</h3>
+            <p>Confirm your vehicle registration.</p>
+            <button type="submit">Confirm Registration</button>
+        </div>
+
+        <div class="form-buttons">
+            <button type="button" id="prevBtn"
+                onclick="changeStep(-1)" disabled>
+                Back
+            </button>
+
+            <button type="button" id="nextBtn"
+                onclick="changeStep(1)">
+                Next
+            </button>
+        </div>
 
         <p id="registerResult"></p>
 
     </form>
-</section>
-    <h2>Vehicle Number Search</h2>
-
-    <input type="text" id="vehicleNumber"
-    placeholder="Enter Vehicle Number">
-
-    <button onclick="searchVehicle()">Search</button>
-
-    <p id="result"></p>
-
-    <script src="script.js"></script>
-<section id="emergency">
-    <h2>🚨 Emergency Contact</h2>
-
-    <p>Send an urgent message to the registered vehicle owner.</p>
-
-    <input
-        type="text"
-        id="emergencyVehicle"
-        placeholder="Enter Vehicle Number"
-    >
-
-    <br><br>
-
-    <textarea
-        id="emergencyMessage"
-        placeholder="Enter your message"
-        rows="4"
-    ></textarea>
-
-    <br><br>
-
-    <button onclick="sendEmergency()">
-        Send Emergency Request
-    </button>
-
-    <p id="emergencyResult"></p>
-</section>
-    <section id="admin">
-    <h2>⚙️ Admin Dashboard</h2>
-
-    <div class="dashboard">
-
-        <div class="card">
-            <h3>🚗 Vehicle Management</h3>
-            <p>Manage registered vehicle records.</p>
-        </div>
-
-        <div class="card">
-            <h3>👤 User Management</h3>
-            <p>Manage registered user accounts.</p>
-        </div>
-
-        <div class="card">
-            <h3>📩 Contact Requests</h3>
-            <p>Review owner contact requests.</p>
-        </div>
-
-        <div class="card">
-            <h3>📊 Reports</h3>
-            <p>View project activity reports.</p>
-        </div>
-        
-    </div>
-</section>
-    <section id="login">
-    <h2>🔐 User Login</h2>
-
-    <form id="loginForm">
-        <input type="email"
-        id="loginEmail"
-        placeholder="Enter Email"
-        required>
-
-        <br><br>
-
-        <input type="password"
-        id="loginPassword"
-        placeholder="Enter Password"
-        required>
-
-        <br><br>
-
-        <button type="submit">Login</button>
-
-        <p id="loginResult"></p>
-    </form>
-</section>
-    <section id="history">
-    <h2>📋 Contact Request History</h2>
-
-    <div class="card">
-        <h3>Request Management</h3>
-        <p>View and manage previous contact requests.</p>
-        <p>Status: Pending / Approved / Rejected</p>
-    </div>
-
-    <div class="card">
-        <h3>Emergency History</h3>
-        <p>View previous emergency request records.</p>
-    </div>
-</section>
-    <section id="service">
-    <h2>🔧 Vehicle Service Reminder</h2>
-
-    <div class="card">
-        <h3>Vehicle Maintenance</h3>
-
-        <input
-            type="text"
-            id="serviceVehicle"
-            placeholder="Vehicle Number"
-        >
-
-        <br><br>
-
-        <input
-            type="date"
-            id="serviceDate"
-        >
-
-        <br><br>
-
-        <button onclick="saveService()">
-            Save Reminder
-        </button>
-
-        <p id="serviceResult"></p>
-    </div>
-    </section>
+</section> 
 </body>
 </html>
