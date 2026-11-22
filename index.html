@@ -61,6 +61,32 @@
     <p id="result"></p>
 
     <script src="script.js"></script>
+<section id="emergency">
+    <h2>🚨 Emergency Contact</h2>
 
+    <p>Send an urgent message to the registered vehicle owner.</p>
+
+    <input
+        type="text"
+        id="emergencyVehicle"
+        placeholder="Enter Vehicle Number"
+    >
+
+    <br><br>
+
+    <textarea
+        id="emergencyMessage"
+        placeholder="Enter your message"
+        rows="4"
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="sendEmergency()">
+        Send Emergency Request
+    </button>
+
+    <p id="emergencyResult"></p>
+</section>
 </body>
 </html>
