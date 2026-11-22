@@ -152,5 +152,33 @@
         <p>View previous emergency request records.</p>
     </div>
 </section>
+    <section id="service">
+    <h2>🔧 Vehicle Service Reminder</h2>
+
+    <div class="card">
+        <h3>Vehicle Maintenance</h3>
+
+        <input
+            type="text"
+            id="serviceVehicle"
+            placeholder="Vehicle Number"
+        >
+
+        <br><br>
+
+        <input
+            type="date"
+            id="serviceDate"
+        >
+
+        <br><br>
+
+        <button onclick="saveService()">
+            Save Reminder
+        </button>
+
+        <p id="serviceResult"></p>
+    </div>
+</section
 </body>
 </html>
